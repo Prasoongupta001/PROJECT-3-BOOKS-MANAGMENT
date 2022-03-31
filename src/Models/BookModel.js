@@ -25,7 +25,7 @@ const bookSchema = new mongoose.Schema({
         required: true
     },
     subcategory: {
-        type: String,
+        type: [String],
         required: true
     },
     reviews: {
@@ -44,4 +44,4 @@ const bookSchema = new mongoose.Schema({
 
 }, { timestamps: true })
 
-module.exports = mongoose.model("Booksp", bookSchema)
+module.exports = mongoose.model("books", bookSchema)

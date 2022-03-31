@@ -36,5 +36,5 @@ phone: {
 
 
 
-module.exports = mongoose.model('Usersdatap', UserSchema)
+module.exports = mongoose.model('usersdatas', UserSchema)
 

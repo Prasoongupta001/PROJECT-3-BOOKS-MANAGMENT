@@ -43,12 +43,6 @@ const createBook = async function (req, res) {
             return res.status(400).send({ status: false, msg: "given user is not present please enter valid userid" })
         }
 
-
-        // const isISBN = await bookModel.findOne({ ISBN })
-        // if (isISBN) {
-        //     return res.status(400).send({ msg: "ISBN is already exists" })
-        // }
-
         if (!isValid(ISBN)) {
             return res.status(400).send({ status: false, msg: "enter ISBN" })
         }
@@ -120,7 +114,6 @@ const getBooksQuery = async function (req, res) {
         const books = await bookModel.find(filterquery).select({ _id: 1, title: 1, excerpt: 1, userId: 1, category: 1, subcategory: 1, releasedAt: 1, reviews: 1 })
         let sortedb = books.sort((a, b) => a.title.localeCompare(b.title));
 
-        // const sortedb = books.sort()
         const count = books.length
 
 
